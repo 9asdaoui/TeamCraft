@@ -14,24 +14,15 @@
         <h2 style="font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; color: #81795c;position: relative;left: 100px; margin: 20px 0; text-shadow: 1px 1px 2px #161414;">Team Formation</h2>
 
         <div id="field">
-          <div class="row forwards">
-            <div class="card" id="card0" onclick="edit_Add(0)"></div>
-            <div class="card" id="card1" onclick="edit_Add(1)"></div>
+          <div class="row forwards" id="rowForwards">
           </div>          
-          <div  class="row midfielders" >
-            <div class="card" id="card2" onclick="edit_Add(2)"></div>
-            <div class="card" id="card3" onclick="edit_Add(3)"></div>
-            <div class="card" id="card4" onclick="edit_Add(4)"></div>
-            <div class="card" id="card5" onclick="edit_Add(5)"></div>
+          <div  class="row midfielders" id="rowMidfielders">
           </div>
-          <div  class="row defenders">
-            <div  class="card" id="card6" onclick="edit_Add(6)"></div>
-            <div class="card" id="card7" onclick="edit_Add(7)"></div>
-            <div class="card" id="card8" onclick="edit_Add(8)"></div>
-            <div class="card" id="card9" onclick="edit_Add(9)"></div>
+          <div  class="row defenders" id="rowDefenders">
+
           </div>
 
-          <div class="row goalkeeper">
+          <div class="row goalkeeper" id="rowGoalkeeper">
         <div class="card" id="cardgb"> </div>
           </div>
         </div>
@@ -56,9 +47,16 @@
 
 </section>
 
+    <section id="fetchcontent">
 
-    <section id="addPlayer" style="display: block;">
-      <h2 >Add Player</h2>
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search for players..." />
+        <button type="button" id="searchBtn" >Search</button>
+        <button type="button" id="newplayerBtn" onclick="displays()">Add new Player</button>
+
+    </div>
+    <div id="content">    
+      <section id="addPlayer" style="display: none;">
       <form id="playerForm">
         
         <input type="text" id="playerName" placeholder="Player Name" required>
@@ -66,7 +64,7 @@
         <input type="url" id="clubLogo" placeholder="Club Logo URL" required>
         <input type="url" id="flag" placeholder="Flag URL" required>
         <select id="playerPosition" required>
-          <option value="GK">Goalkeeper</option>
+          <option disabled selected >position</option>
           <option value="CB">Center Back</option>
           <option value="LB">Left Back</option>
           <option value="RB">Right Back</option>
@@ -82,12 +80,12 @@
         <input type="number" id="playerDribbling" placeholder="Dribbling" required min="1" max="100">
         <input type="number" id="playerDefending" placeholder="Defending" required min="1" max="100">
         <input type="number" id="playerPhysical" placeholder="Physical" required min="1" max="100">
-        <button type="button" id="addbtn" onclick="add()" >Add Player</button>
-        <button type="button" id="cancel" >Cancel</button>
-        <button type="button" onclick="delet()"  >delet</button>
+        <button type="button" id="addbtn" onclick="addCart()">Add Player</button>
+        <button type="button" id="cancel" onclick="delet()" style="display: none;" >delet</button>
 
 
       </form>
+    </section></div>
     </section>
   </main>
   <script src="script.js"></script>

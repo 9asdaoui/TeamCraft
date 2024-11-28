@@ -195,8 +195,8 @@ section {
 #addPlayer {
     width: 154px;
     position: absolute;
-    right: 410px;
-    top: 150px;
+    right: 371px;
+    top: -36px;
 }
 
 
@@ -212,10 +212,11 @@ section {
     bottom: -20px;
 }
 form {
+    background-color: #4a4646;
     display: grid;
     grid-template-columns: 250px 200px;
     margin-top: 40px;
-    width: 470px;
+    width: 500px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -240,10 +241,73 @@ button:hover {
     background-color: #45a049;
 }
 
-button#cancel {
-    background-color: #f44336;
+
+.action-btn {
+    width: 40px;
+    height: 41px;
+    background-color: #45a049;
+    color: #000000;
+    border: none;
+    border-radius: 25%;
+    font-size: 21px;
+    position: absolute;
+    display: none;
+    cursor: pointer;
+    opacity: 0.8;
+    z-index: 1;
+}
+.action-btn:hover {
+    background-color: red;
+}
+#deletbtn {
+    top: -9px;
+    right: 2px;
 }
 
-button#cancel:hover {
-    background-color: #da190b;
+#editbtn {
+    top: 34px;
+    right: 2px;
+}
+
+.card:hover .action-btn {
+    display: block;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+#searchInput {
+    width: 300px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#searchBtn {
+    padding: 10px 15px;
+    margin-left: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#searchBtn:hover {
+    background-color: #0056b3;
+}
+#fetchcontent{
+    background-color: #000000bd;
+    width: 587px;
+    height: 451px;
+    position: absolute;
+    right: 20px;
+    top: 176px;
+    border-radius: 24px;
 }
