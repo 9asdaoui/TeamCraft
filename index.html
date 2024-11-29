@@ -8,30 +8,19 @@
 </head>
 <body id="body">
   <main>
-
-
-    <section id="team" ></div>
-        <h2 style="font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; color: #81795c;position: relative;left: 100px; margin: 20px 0; text-shadow: 1px 1px 2px #161414;">Team Formation</h2>
-
-        <div id="field">
-          <div class="row forwards" id="rowForwards">
-          </div>          
-          <div  class="row midfielders" id="rowMidfielders">
-          </div>
-          <div  class="row defenders" id="rowDefenders">
-
-          </div>
-
-          <div class="row goalkeeper" id="rowGoalkeeper">
-        <div class="card" id="cardgb"> </div>
-          </div>
-        </div>
-      </section>
-      
-    <section id="formation">
-        <h2>Select Formation</h2>
+    <nav id="navbar">
+      <div class="logo-container">
+          <img src="images/logo-removebg-preview.png" alt="TeamCraft Logo" class="logo">
+          <span class="brand-name">TeamCraft</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home"><h2>Home</h2></a></li>
+        <li><a href="#players"><h2>Players</h2></a></li>
+    </ul>
+      <section id="formation">
+        <h2 class="formationName">Select Formation</h2>
         <select id="formationSelect">
-          <option disabled selected>Choose a formation</option>
+          <option disabled selected >Choose a formation</option>
           <option value="4-3-3">4-3-3</option>
           <option value="4-4-2">4-4-2</option>
           <option value="3-5-2">3-5-2</option>
@@ -43,6 +32,28 @@
         </select>
       </section>
 
+    </nav>
+    
+
+
+    <section id="team" ></div>
+        <div id="field">
+          <div class="row forwards" id="rowForwards">
+          </div>          
+          <div  class="row midfielders" id="rowMidfielders">
+          </div>
+          <div  class="row defenders" id="rowDefenders">
+
+          </div>
+
+          <div  class="row goalkeeper" id="rowGoalkeeper">
+        <div onclick="displaysgk()" class="card" id="cardgb"> </div>
+          </div>
+        </div>
+      </section>
+      
+
+
 <section id="adexplayer">
 
 </section>
@@ -51,12 +62,13 @@
 
       <div class="search-container">
         <input type="text" id="searchInput" placeholder="Search for players..." />
+        <div>
         <button type="button" id="searchBtn" >Search</button>
         <button type="button" id="newplayerBtn" onclick="displays()">Add new Player</button>
-
+      </div>
     </div>
     <div id="content">    
-      <section id="addPlayer" style="display: none;">
+     <section id="addPlayer" style="display: none;">
       <form id="playerForm">
         
         <input type="text" id="playerName" placeholder="Player Name" required>
@@ -64,7 +76,6 @@
         <input type="url" id="clubLogo" placeholder="Club Logo URL" required>
         <input type="url" id="flag" placeholder="Flag URL" required>
         <select id="playerPosition" required>
-          <option disabled selected >position</option>
           <option value="CB">Center Back</option>
           <option value="LB">Left Back</option>
           <option value="RB">Right Back</option>
@@ -81,11 +92,29 @@
         <input type="number" id="playerDefending" placeholder="Defending" required min="1" max="100">
         <input type="number" id="playerPhysical" placeholder="Physical" required min="1" max="100">
         <button type="button" id="addbtn" onclick="addCart()">Add Player</button>
-        <button type="button" id="cancel" onclick="delet()" style="display: none;" >delet</button>
-
-
       </form>
-    </section></div>
+    </section>
+
+    <section id="addGoalkeeper" style="display: none;">
+      <form id="goalkeeperForm">
+        <input type="text" id="goalkeeperName" placeholder="Goalkeeper Name" required>
+        <input type="url" id="goalkeeperPhoto" placeholder="Goalkeeper Photo URL" required>
+        <input type="url" id="clubLogo" placeholder="Club Logo URL" required>
+        <input type="url" id="flag" placeholder="Flag URL" required>
+        <select id="goalkeeperPosition" required>
+          <option value="GK" id="position">Goalkeeper</option>
+        </select>
+        <input type="number" id="goalkeeperRating" placeholder="Rating (1-100)" required min="1" max="100">
+        <input type="number" id="goalkeeperHan" placeholder="Handling" required min="1" max="100">
+        <input type="number" id="goalkeeperKic" placeholder="Kicking" required min="1" max="100">
+        <input type="number" id="goalkeeperRef" placeholder="Reflexes" required min="1" max="100">
+        <input type="number" id="goalkeeperSpd" placeholder="Speed" required min="1" max="100">
+        <input type="number" id="goalkeeperPos" placeholder="Positioning" required min="1" max="100">
+        <button type="button" id="addGoalkeeperBtn" onclick="addgoolKeeper()">Add Goalkeeper</button>
+      </form>
+    </section>
+  </div>
+
     </section>
   </main>
   <script src="script.js"></script>
