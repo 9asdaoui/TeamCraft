@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="logo-container">
+            <img src="images/logo-removebg-preview.png" alt="TeamCraft Logo" class="logo">
+            <span class="brand-name">TeamCraft</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html"><h2>Home</h2></a></li>
+          <li><a href="players.html"><h2>Players</h2></a></li>
+      </ul>
+  
+      </nav>
+      <section id="fetchcontent">
+
+        <div class="search-container">
+          <input type="text" id="searchInput" onkeydown="searchfunction()" placeholder="Search for players..." />
+          <div>
+          <button type="button" id="searchBtn" onclick="searchfunction()" >Search</button>
+          <button type="button" id="newplayerBtn" onclick="displays()">Add new Player</button>
+        </div>
+      </div>
+      <div id="content" style="display:grid;"> </div>   
+      </section>
+
+      <script src="script.js"></script>
+
+</body>
+</html>

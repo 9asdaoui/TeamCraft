@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TeamCraft</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" media="screen and (min-width: 1024px)" href="style.css">
+  <link rel="stylesheet" media="screen and (max-width: 600px)" href="mobile.css">
 </head>
 <body id="body">
   <main>
@@ -14,23 +15,21 @@
           <span class="brand-name">TeamCraft</span>
       </div>
       <ul class="nav-links">
-        <li><a href="#home"><h2>Home</h2></a></li>
-        <li><a href="#players"><h2>Players</h2></a></li>
+        <li><a href="index.html"><h2>Home</h2></a></li>
+        <li><a href="players.html"><h2>Players</h2></a></li>
     </ul>
       <section id="formation">
         <h2 class="formationName">Select Formation</h2>
-        <select id="formationSelect">
-          <option disabled selected >Choose a formation</option>
+        <select id="formationSelect" onchange="formation()">
           <option value="4-3-3">4-3-3</option>
           <option value="4-4-2">4-4-2</option>
           <option value="3-5-2">3-5-2</option>
-          <option value="4-2-4">4-2-4</option>
-          <option value="4-5-1">4-5-1</option>
-          <option value="5-2-3">5-2-3</option>
-          <option value="5-3-1">5-3-1</option>
+          <option value="4-2-3-1">5-2-3</option>
+          <option value="5-3-2">5-3-2</option>
           <option value="3-4-3">3-4-3</option>
+          <option value="4-1-4-1">4-1-5</option>
+          <option value="5-4-1">5-4-1</option>
         </select>
-      </section>
 
     </nav>
     
@@ -39,10 +38,20 @@
     <section id="team" ></div>
         <div id="field">
           <div class="row forwards" id="rowForwards">
+            <div onclick="displays()" class="card" > </div>
+            <div onclick="displays()" class="card" > </div>
           </div>          
           <div  class="row midfielders" id="rowMidfielders">
+            <div onclick="displays()" class="card" > </div>
+            <div onclick="displays()" class="card" > </div>
+            <div onclick="displays()" class="card" > </div>
+            <div onclick="displays()" class="card" > </div>
           </div>
           <div  class="row defenders" id="rowDefenders">
+            <div onclick="displays()" class="card" > </div>
+            <div onclick="displays()" class="card" > </div>
+            <div onclick="displays()" class="card" > </div>
+            <div onclick="displays()" class="card" > </div>
 
           </div>
 
@@ -61,13 +70,13 @@
     <section id="fetchcontent">
 
       <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Search for players..." />
+        <input type="text" id="searchInput" onkeydown="searchfunction()" placeholder="Search for players..." />
         <div>
-        <button type="button" id="searchBtn" >Search</button>
+        <button type="button" id="searchBtn" onclick="searchfunction()" >Search</button>
         <button type="button" id="newplayerBtn" onclick="displays()">Add new Player</button>
       </div>
     </div>
-    <div id="content">    
+    <div id="content" style="display:grid;"> </div>   
      <section id="addPlayer" style="display: none;">
       <form id="playerForm">
         
@@ -92,6 +101,7 @@
         <input type="number" id="playerDefending" placeholder="Defending" required min="1" max="100">
         <input type="number" id="playerPhysical" placeholder="Physical" required min="1" max="100">
         <button type="button" id="addbtn" onclick="addCart()">Add Player</button>
+        <button type="button" onclick="displayscontent()">Cancel</button>
       </form>
     </section>
 
@@ -111,11 +121,14 @@
         <input type="number" id="goalkeeperSpd" placeholder="Speed" required min="1" max="100">
         <input type="number" id="goalkeeperPos" placeholder="Positioning" required min="1" max="100">
         <button type="button" id="addGoalkeeperBtn" onclick="addgoolKeeper()">Add Goalkeeper</button>
+        <button type="button" onclick="displayscontent()">Cancel</button>
+
       </form>
     </section>
-  </div>
+  
 
     </section>
+    <section id="replacments"><h2>replacments</h2><div id="repContent"></div></section>
   </main>
   <script src="script.js"></script>
 </body>
