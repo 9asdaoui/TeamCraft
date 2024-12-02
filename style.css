@@ -303,6 +303,7 @@ button:hover {
 }
 #fetchcontent{
     background-color: #000000bd;
+    backdrop-filter: blur(20px);
     width: 587px;
     height: 750px;
     position: absolute;

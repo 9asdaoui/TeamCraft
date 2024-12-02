@@ -185,6 +185,7 @@ function affichage() {
         editBtn.id = 'editbtn';
         editBtn.textContent = '✎';
         editBtn.setAttribute('onclick', `editGK(${i})`);
+        
          
         divCard.appendChild(deleteBtn);
         divCard.appendChild(editBtn);
